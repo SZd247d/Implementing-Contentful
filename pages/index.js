@@ -36,5 +36,6 @@ export const getStaticProps = async (ctx) => {
     props: {
       webTechs: res.items,
     },
+    revalidate: 1,
   }
 }

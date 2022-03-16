@@ -64,5 +64,6 @@ export const getStaticProps = async (ctx) => {
     props: {
       webTech: items[0],
     },
+    revalidate: 1,
   }
 }
