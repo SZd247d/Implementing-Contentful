@@ -13,8 +13,8 @@ function WebTechCard({ webTech }) {
           layout="fill"
           objectFit="contain"
           src={`https://${thumbnail.fields.file.url}`}
-          // width={thumbnail.fields.file.details.image.width}
-          // height={thumbnail.fields.file.details.image.height}
+          width={thumbnail.fields.file.details.image.width}
+          height={thumbnail.fields.file.details.image.height}
         />
       </div>
 
