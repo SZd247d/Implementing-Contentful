@@ -10,23 +10,26 @@ function webTechDetails({ webTech }) {
   console.log(features)
   return (
     <div>
-      <Image
-        objectFit="contain"
-        src={`https://${featuredImage.fields.file.url}`}
-        width={featuredImage.fields.file.details.image.width}
-        height={featuredImage.fields.file.details.image.height}
-      />
-
-      <h2 className="text-xl">{title} </h2>
+      {!webTech && <Skeleton />}
       <div>
-        <h3>Features Of {title}: </h3>
-        {features.map((feature) => (
-          <span key={feature}>{feature} </span>
-        ))}
-      </div>
+        <Image
+          objectFit="contain"
+          src={`https://${featuredImage.fields.file.url}`}
+          width={featuredImage.fields.file.details.image.width}
+          height={featuredImage.fields.file.details.image.height}
+        />
 
-      <div>
-        <h3>{documentToReactComponents(description)}</h3>
+        <h2 className="text-xl">{title} </h2>
+        <div>
+          <h3>Features Of {title}: </h3>
+          {features.map((feature) => (
+            <span key={feature}>{feature} </span>
+          ))}
+        </div>
+
+        <div>
+          <h3>{documentToReactComponents(description)}</h3>
+        </div>
       </div>
     </div>
   )
@@ -50,7 +53,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   }
 }
 
